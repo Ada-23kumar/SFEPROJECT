@@ -13,7 +13,7 @@ try:
     curser = conn.cursor()
 except:
     print("Error")
-    sys.exit()
+    # sys.exit()
 else:
     print("Connected")
 
