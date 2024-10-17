@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Collection</title>
+
+    <!-- from awseom cdn link  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+     <!-- custom css file <link rel="stylesheet" href=""> -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+     <link rel="icon" href="{{url_for('static', filename='images/logo.jpeg')}}" type="image/x-icon">
+
+</head>
+<body>
+    
+
+<!-- header section is start  -->
+
+<header class="header">
+    <a href="#" class="logo">
+        <img src="{{url_for('static', filename = 'images/logo.jpeg') }}" alt="logo">
+    </a>
+    <nev class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">how it works</a>
+        <a href="#whyus">why us?</a>
+        <a href="/ScrapRate">Scrap Rate</a>
+
+    </nev>
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-user" id="user"></div>
+        <div class="sign">
+            <a href="/logout" class="fas fa-sign-out" id="sign_out">
+            </a>
+        </div>
+    </div>
+
+<!-- example  of how to use the code -->
+
+
+    
+</header>
+
+
+ <!-- header section end  -->
+
+
+
+<!-- home section starts -->
+
+<section class="home" id="home">
+    <div class="content">
+        <!-- <img src="images/home_image.jpeg" alt="home"> -->
+        <h3>Sell your recyclables
+            online with <span class="highlight">GarbageCollector!</span></h3>
+        <p>Paper - Plastics - Metals - Appliances</p>
+        <p><span class="typewriter" id="typewriter"></span></p>
+        <a href="#form" class="btn" id="getStartedBtn">Get Started</a>
+        <!-- </div> -->
+</section>
+<!-- homw section end -->
+
+
+
+
+<!-- how it works section start -->
+
+<section class="how_works" id="about">
+    <div class="container text-center">
+        <h1 class="heading">How it's <span>works</span></h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="how_works_col">
+                    <h4>Schedule a pickup</h4><img
+                        src="https://ikp.edgekit.net/y8s2vhk66ef/undraw_Online_calendar_re_wk3t_1_SHrgqjm1w6l.png?updatedAt=1628624813421"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="how_works_col">
+                    <h4>Pickup at your address</h4><img
+                        src="https://ikp.edgekit.net/y8s2vhk66ef/undraw_Street_food_re_uwex_1_tHCc3auJgJY.png?updatedAt=1628624814853"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="how_works_col">
+                    <h4>Receive payment</h4><img
+                        src="https://ikp.edgekit.net/y8s2vhk66ef/undraw_Credit_card_payments_re_qboh_1_Sop8u3hvUiX.png?updatedAt=1628624812461"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- how it work section end -->
+
+
+<!-- why us section start -->
+
+
+<section id="whyus" class="why_us">
+    <div class="container text-center">
+        <h2 class="header--why-us">Why us</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-xl-3">
+                <div class="why_us_col"><img
+                        src="https://ikp.edgekit.net/h1rxzpffx/scrapuncle/why-us/rupee_h5cohN94jkyh.png"
+                        alt="Best Rates">
+                    <div>
+                        <h4>Best Rates</h4>
+                        <p>We provide the best value for your scrap from our network of Recyclers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xl-3">
+                <div class="why_us_col"><img
+                        src="https://ikp.edgekit.net/h1rxzpffx/scrapuncle/why-us/thumbs-up_vOIp-YChzZhh.png"
+                        alt="Convenience">
+                    <div>
+                        <h4>Convenience</h4>
+                        <p>Doorstep pickup according to user's convenient date &amp; time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xl-3">
+                <div class="why_us_col"><img
+                        src="https://ikp.edgekit.net/h1rxzpffx/scrapuncle/why-us/trust_TmQdK2fLBVD.png"
+                        alt="why_us_image">
+                    <div>
+                        <h4>Trust</h4>
+                        <p>Trained &amp; Verified Pickup Staff with Swapeco Smart Weighing Scale</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xl-3">
+                <div class="why_us_col"><img
+                        src="https://ikp.edgekit.net/h1rxzpffx/scrapuncle/why-us/eco_wwfqNtl3n-r.png"
+                        alt="why_us_image">
+                    <div>
+                        <h4>Eco-friendly</h4>
+                        <p>We ensure responsible recycling of your scrap items. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- why us section end -->
+
+
+<!-- form section is start -->
+<section id="form">
+<div id="formContainer" style="display: none;">
+    <h4>Request a Pickup</h4>
+    <form id="pickupForm" method="post" action="/submit_pickup">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" required>
+
+        <label for="quantity">Quantity as per /kg:</label>
+        <input type="number" id="quantity" name="quantity" required>
+
+        <label for="garbageType">Garbage Type:</label>
+        <select id="garbageType" name="garbageType" required>
+            <option value="">Select type</option>
+            <option value="paper">Paper</option>
+            <option value="plastics">Plastics</option>
+            <option value="metals">Metals</option>
+            <option value="appliances">Appliances</option>
+        </select>
+
+        <input type="submit" class="button btn-primary btn-block btn-lg"  value="Login">
+    </form>
+</div>
+</section>
+ <!-- form section is end -->
+
+
+
+
+
+
+
+
+
+
+<!-- footer section start  -->
+
+<footer>
+    <div class="f-info">
+        <div class="f-info-socials">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <div class="f-info-brand">&copy; Garbage collection Limited</div>
+        <div class="f-info-links">
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+        </div>
+    </div>
+</footer>
+ <!-- footer section end  -->
+
+
+
+
+
+<!-- costom js file  -->
+<script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
+
+</body>
+</html>

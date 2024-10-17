@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Collection</title>
+    <link rel="icon" href="{{url_for('static', filename='images/logo.jpeg')}}" type="image/x-icon">
+
+    <!-- from awseom cdn link  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+     <!-- custom css file <link rel="stylesheet" href=""> -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+     <!-- <script>
+        alert("This page has been loaded")
+     </script> -->
+
+</head>
+<body>
+    
+
+<!-- header section is start  -->
+
+<header class="header">
+    <a href="#" class="logo">
+        <img src="images/logo.jpeg" alt="">
+    </a>
+    <nev class="navbar">
+        <a href="/user">home</a>
+        <a href="#Scrap Rate">Scrap Rate</a>
+
+
+    </nev>
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <!-- <a class="btn btn-outline-primary" href="/logout">Logout</a> -->
+</header>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container page_two_content">
+                    <p class="block_title">Normal Recyclables</p>
+                    <div class="flex flex-wrap item_block_web">
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikc.edgekit.net/h1rxzpffx/scrapuncle/assets/papers_rorTDynz7.png?updatedAt=1710451407122"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Office Paper (A3/A4)</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/newspaper-report.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Newspaper
+                                </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapecox/Books.webp" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Copies/Books
+                                </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/box.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Cardboard
+                                </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/bin.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Plastic </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/beam.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Iron
+                                </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/hook.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Steel Utensils</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/beer.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Aluminium</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/brass-nuckle.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Brass</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/wire.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Copper</p>
+                        </div>
+                    </div>
+                    <p class="block_title">Large Appliances</p>
+                    <div class="flex flex-wrap item_block_web">
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/air-conditioner.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">AC </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/air-conditioner(1).png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Window AC</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/air-conditioner.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">AC 1 Ton (Copper Coil)</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/smart-washing-machine.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Front Load Fully Automatic Washing Machine</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/air-conditioner.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">AC 2 Ton (Copper Coil)</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/smart-washing-machine.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Automatic Washing Machine</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/smart-washing-machine.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Washing Machine</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/water-heater.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Geyser</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/fridge.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Single Door Fridge </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/fridge.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Double Door Fridge </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/ventilation.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Iron Cooler</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/ventilation.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Plastic cooler</p>
+                        </div>
+                    </div>
+                    <p class="block_title">Small Appliances</p>
+                    <div class="flex flex-wrap item_block_web">
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/printer.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Printer/scanner/fax machine</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/lamp.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Plastic E-waste </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/radiation.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Metal E-waste</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/television.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">CRT TV </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/fan.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/Kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Ceiling Fan</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/generator(1).png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Motors</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/microwave.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Microwave</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/generator.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">UPS</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/engine.png" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/Kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Inverter/Stabilizer</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/battery.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/kg</p>
+                            </div>
+                            <p class="local_specific_rate_title">Battery</p>
+                        </div>
+                    </div>
+                    <p class="block_title">Mobiles &amp; Computers</p>
+                    <div class="flex flex-wrap item_block_web">
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/black-laptop.png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Scrap Laptop </p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/computer(2).png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">CRT Monitor</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/computer(2).png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">LCD Monitor</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapeco/img/scrap-item/computer(2).png"
+                                    alt="icon" class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Computer CPU</p>
+                        </div>
+                    </div>
+                    <p class="block_title">Others</p>
+                    <div class="flex flex-wrap item_block_web">
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapecox/BikeIcon.webp" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/Piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Bike</p>
+                        </div>
+                        <div class="box_outside web_box_outside">
+                            <div class="block_box local_rate_block_box web_local_rate_block_box"><img
+                                    src="https://ikp.edgekit.net/h1rxzpffx/swapecox/CarIcon.webp" alt="icon"
+                                    class="rate_image">
+                                <p class="rate_price">RS 00/piece</p>
+                            </div>
+                            <p class="local_specific_rate_title">Car</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- costom js file  -->
+<script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
+
+</body>
+</html>

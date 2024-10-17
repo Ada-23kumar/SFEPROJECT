@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Collection</title>
+
+    <!-- from awseom cdn link  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+     <!-- custom css file <link rel="stylesheet" href=""> -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel="icon" href="{{url_for('static', filename='images/logo.jpeg')}}" type="image/x-icon">
+
+</head>
+<body>
+    
+
+<!-- header section is start  -->
+
+<header class="header">
+    <a href="#" class="logo">
+        <img src="{{url_for('static', filename = 'images/logo.jpeg') }}" alt="logo">
+    </a>
+    <nev class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">how it works</a>
+        <a href="#whyus">why us?</a>
+        <a href="/ScrapRate">Scrap Rate</a>
+
+    </nev>
+    <div class="icons">
+        
+        <div class="fas fa-bars" id="menu-btn"></div>
+        
+        <!-- <a href="sign_in.html" class="fas fa-sign-out" id="sign-out"></a> -->
+        <div class="sign">
+            <a href="/sign_in" class="fas fa-sign-in" id="sign_in">
+            </a>
+        </div>
+    </div>
+
+    <!-- <a class="btn btn-outline-primary" href="/logout">Logout</a> -->
+</header>
+
+
+ <!-- header section end  -->
+
+
+<!-- home section starts -->
+
+<section class="home" id="home">
+    <div class="content">
+        <!-- <img src="images/home_image.jpeg" alt="home"> -->
+        <h3>Sell your recyclables
+            online with <span class="highlight">GarbageCollector!</span></h3>
+        <p>Paper - Plastics - Metals - Appliances</p>
+        <p><span class="typewriter" id="typewriter"></span></p>
+    
+        <a href="/sign_in" class="btn btn-outline-primary">Get Started</a>
+        </div>
+</section>
+<!-- homw section end -->
+
+<!-- how it works section start -->
+
+<section class="how_works" id="about">
+    <div class="container text-center">
+        <h1 class="heading">How it's <span>works</span></h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="how_works_col">
+                    <h4>Schedule a pickup</h4><img
+                        src="https://ikp.edgekit.net/y8s2vhk66ef/undraw_Online_calendar_re_wk3t_1_SHrgqjm1w6l.png?updatedAt=1628624813421"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="how_works_col">
+                    <h4>Pickup at your address</h4><img
+                        src="https://ikp.edgekit.net/y8s2vhk66ef/undraw_Street_food_re_uwex_1_tHCc3auJgJY.png?updatedAt=1628624814853"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="how_works_col">
+                    <h4>Receive payment</h4><img
+                        src="https://ikp.edgekit.net/y8s2vhk66ef/undraw_Credit_card_payments_re_qboh_1_Sop8u3hvUiX.png?updatedAt=1628624812461"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- how it work section end -->
+
+
+<!-- why us section start -->
+
+
+<section id="whyus" class="why_us">
+    <div class="container text-center">
+        <h2 class="header--why-us">Why us</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-xl-3">
+                <div class="why_us_col"><img
+                        src="https://ikp.edgekit.net/h1rxzpffx/scrapuncle/why-us/rupee_h5cohN94jkyh.png"
+                        alt="Best Rates">
+                    <div>
+                        <h4>Best Rates</h4>
+                        <p>We provide the best value for your scrap from our network of Recyclers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xl-3">
+                <div class="why_us_col"><img
+                        src="https://ikp.edgekit.net/h1rxzpffx/scrapuncle/why-us/thumbs-up_vOIp-YChzZhh.png"
+                        alt="Convenience">
+                    <div>
+                        <h4>Convenience</h4>
+                        <p>Doorstep pickup according to user's convenient date &amp; time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xl-3">
+                <div class="why_us_col"><img
+                        src="https://ikp.edgekit.net/h1rxzpffx/scrapuncle/why-us/trust_TmQdK2fLBVD.png"
+                        alt="why_us_image">
+                    <div>
+                        <h4>Trust</h4>
+                        <p>Trained &amp; Verified Pickup Staff with Swapeco Smart Weighing Scale</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xl-3">
+                <div class="why_us_col"><img
+                        src="https://ikp.edgekit.net/h1rxzpffx/scrapuncle/why-us/eco_wwfqNtl3n-r.png"
+                        alt="why_us_image">
+                    <div>
+                        <h4>Eco-friendly</h4>
+                        <p>We ensure responsible recycling of your scrap items. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- why us section end -->
+
+<!-- houshing and business section start-->
+
+<section class="deferent_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <h2 class="deferent_title">Households &amp; Businesses have different needs and we cater to each
+                            of them</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row f-sm-column-reverse">
+            <div class="col-md-6">
+                <div class="content-holder">
+                    <p class="deferent_sub_title">For Households </p>
+                    <ul class="deferent_ul">
+                        <li><img src="https://ik.imagekit.io/99x/startup/99xCheck_S1K62CB8I.svg"
+                                alt="assets"><span>On-Demand Doorstep Pickups</span></li>
+                        <li><img src="https://ik.imagekit.io/99x/startup/99xCheck_S1K62CB8I.svg"
+                                alt="assets"><span>Accurate Digital Weighing</span></li>
+                        <li><img src="https://ik.imagekit.io/99x/startup/99xCheck_S1K62CB8I.svg"
+                                alt="assets"><span>Safety (Trained &amp; Verified Staff)</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 text-center"><img class="deferent_image"
+                    src="https://ikp.edgekit.net/y8s2vhk66ef/home_illust_1_vqbxsy5za.png?updatedAt=1628667425589"
+                    alt="defent_image"></div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-6 text-center"><img class="deferent_image_household"
+                    src="https://ikp.edgekit.net/y8s2vhk66ef/business_illust1_1_UjVieCFRixz.png?updatedAt=1628667425278"
+                    alt="defent_image"></div>
+            <div class="col-md-6">
+                <div class="content-holder">
+                    <p class="deferent_sub_title">For Businesses </p>
+                    <ul class="deferent_ul">
+                        <li><img src="https://ik.imagekit.io/99x/startup/99xCheck_S1K62CB8I.svg"
+                                alt="assets"><span>Formal Payments &amp; Documentation</span></li>
+                        <li><img src="https://ik.imagekit.io/99x/startup/99xCheck_S1K62CB8I.svg"
+                                alt="assets"><span>Sustainability Reports</span></li>
+                        <li><img src="https://ik.imagekit.io/99x/startup/99xCheck_S1K62CB8I.svg"
+                                alt="assets"><span>Competitive Prices</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- hous and business section end -->
+
+
+
+<!-- footer section start  -->
+
+<footer>
+    <div class="f-info">
+        <div class="f-info-socials">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <div class="f-info-brand">&copy; Garbage collection Limited</div>
+        <div class="f-info-links">
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+        </div>
+    </div>
+</footer>
+ <!-- footer section end  -->
+
+
+<!-- costom js file  -->
+<script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
+
+</body>
+</html>
