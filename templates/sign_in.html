@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Garbage Collection Login</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.jpeg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="welcome-message">
+                <h1>Welcome!</h1>
+                <p>We're glad to have you back.</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="login-box">
+                <div class="login-title">
+                    <h2>Login</h2>
+                </div>
+                <form id="form" action="/login_validation" method="POST">
+                    <div class="input-box">
+                        <label for="username">email:</label>
+                        <input type="email" name="email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" required>
+                    </div>
+                    <input type="submit" class="button btn-primary btn-block btn-lg" value="Login">
+                </form>
+
+                <!-- Forgot password and sign up links -->
+                <div class="login-options">
+                    <a href="/forgot-password">Forgot password?</a>
+                    <a href="/sign_up">Don't have an account? Sign up</a>
+                </div>
+
+                <!-- Divider with "or" in the middle -->
+                <div class="divider">or</div>
+
+                <!-- Social login icons -->
+                <div class="social-login">
+                    <i class="fa-brands fa-google"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-apple"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome CDN Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+
+</html>
