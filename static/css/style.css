@@ -648,6 +648,12 @@ input, select {
 }
 /* form section end */
 
+#map { 
+    height: 600px;
+    width: 80vh;
+}
+
+
 
 
 
