@@ -11,7 +11,42 @@
      <!-- custom css file <link rel="stylesheet" href=""> -->
      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
      <link rel="icon" href="{{url_for('static', filename='images/logo.jpeg')}}" type="image/x-icon">
+     <style>
+        .user-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip {
+            visibility: hidden;
+            background-color: #61c920;
+            color: white;
+            text-align: center;
+            padding: 5px 5px;
+            border-radius: 3px;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
 
+        .user-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .fas {
+            font-size: 24px;
+        }
+
+        .sign a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     
@@ -31,7 +66,10 @@
     </nev>
     <div class="icons">
         <div class="fas fa-bars" id="menu-btn"></div>
-        <div class="fas fa-user" id="user"></div>
+        <div class="user-container">
+            <div class="fas fa-user" id="user"></div>
+            <span class="tooltip">{{ name }}</span>  <!-- Flask variable for username -->
+        </div>
         <div class="sign">
             <a href="/logout" class="fas fa-sign-out" id="sign_out">
             </a>
