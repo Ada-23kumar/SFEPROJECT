@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key=os.urandom(24) 
 
 try:
-    conn = mysql.connector.connect(host = "localhost", user = "root", password = "", database= "SFE_PROJECT")
+    conn = mysql.connector.connect(host = "localhost", user = "root", password = "", database= "excelPro")
 
     curser = conn.cursor()
 except:
