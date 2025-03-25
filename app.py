@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, url_for
+from flask import Flask, render_template, request, redirect, session, url_for, flash
 import mysql.connector   # type: ignore
 import sys
 import os
@@ -10,12 +10,12 @@ app.secret_key=os.urandom(24)
 try:
     conn = mysql.connector.connect(host = "localhost", user = "root", password = "", database= "excelPro")
 
-    curser = conn.cursor()
-except:
-    print("Error")
+    curser = conn.cursor(dictionary=True)
+    print("Connected to Database")
+except mysql.connector.Error as err:
+    print(f"Error: {err}")
     # sys.exit()
-else:
-    print("Connected")
+
 
 
 @app.route('/')
@@ -39,11 +39,13 @@ def login_validation():
         SELECT * FROM User_login WHERE email LIKE '{}' AND password LIKE '{}';
         """.format(email, password))
     
-    user = curser.fetchall()
+    user = curser.fetchone() # fetch one user
     if len(user) > 0:
-        session['id'] = user[0][0]
-        return redirect('/user')
+        session['id'] = user['User_id']
+        session['name'] = user['name']
+        return redirect(url_for('user', name = user['name'])) # redirect to /user/<name>
     else:
+        flash("Invalid email or password!", "danger")
         return redirect('/sign_in')
 
 @app.route('/sign_up')
@@ -61,10 +63,11 @@ def register_validation():
                    ');
                    """.format(name, email, password))
     conn.commit()
+    flash("Registration successful! Please login.", "success")
 
     curser.execute("""
         SELECT * FROM User_login WHERE email LIKE '{}' AND password LIKE '{}'""".format(email, password))
-    myuser = curser.fetchall()
+    curser.fetchall()
     return redirect('/sign_in')
 
 
@@ -72,10 +75,11 @@ def register_validation():
 
 
 
-@app.route('/user')
-def user():
+@app.route('/user/<name>')
+def user(name):
+    # name = curser.execute("""SELECT * User_login WHERE name """)
     if'id' in session:
-        return render_template('userlogin.html')
+        return render_template('userlogin.html', name = name)
     else:
         return redirect('/sign_in')
     
@@ -112,7 +116,14 @@ def logout():
     session.pop('id')
     return redirect('/')
 
+@app.route('/delevery')
+def delevery():
+    return render_template('delevery.html')
 
+
+@app.route('/auther')
+def auther():
+    return render_template('auther.html')
 
 
 
