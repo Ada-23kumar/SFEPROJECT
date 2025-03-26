@@ -35,18 +35,23 @@ def sign_in():
 def login_validation():
     email = request.form.get('email')
     password = request.form.get('password')
-    curser.execute("""
-        SELECT * FROM User_login WHERE email LIKE '{}' AND password LIKE '{}';
-        """.format(email, password))
-    
-    user = curser.fetchone() # fetch one user
-    if len(user) > 0:
+
+    conn = mysql.connector.connect(host="localhost", user="root", password="", database="excelPro")
+    curser = conn.cursor(dictionary=True)
+
+    curser.execute("SELECT * FROM User_login WHERE email = %s AND password = %s", (email, password))
+    user = curser.fetchone()  # Use fetchone() instead of fetchall()
+
+    conn.close()  # Close connection after query execution
+
+    if user:
         session['id'] = user['User_id']
         session['name'] = user['name']
-        return redirect(url_for('user', name = user['name'])) # redirect to /user/<name>
+        return redirect(url_for('user', name=user['name']))
     else:
         flash("Invalid email or password!", "danger")
         return redirect('/sign_in')
+
 
 @app.route('/sign_up')
 def sign_up():
@@ -58,16 +63,25 @@ def register_validation():
     name = request.form.get('uname')
     email = request.form.get('uemail')
     password = request.form.get('upassword')
-    curser.execute("""
-                   INSERT INTO User_login (name, email, password) VALUES ('{}', '{}', '{}
-                   ');
-                   """.format(name, email, password))
-    conn.commit()
-    flash("Registration successful! Please login.", "success")
 
-    curser.execute("""
-        SELECT * FROM User_login WHERE email LIKE '{}' AND password LIKE '{}'""".format(email, password))
-    curser.fetchall()
+    conn = mysql.connector.connect(host="localhost", user="root", password="", database="excelPro")
+    curser = conn.cursor(dictionary=True)
+
+    curser.execute("INSERT INTO User_login (name, email, password) VALUES (%s, %s, %s)", (name, email, password))
+    conn.commit()
+
+    # Retrieve newly registered user
+    curser.execute("SELECT * FROM User_login WHERE email = %s AND password = %s", (email, password))
+    myuser = curser.fetchone()
+
+    conn.close()
+
+    if myuser:
+        session['id'] = myuser['User_id']
+        session['name'] = myuser['name']
+        return redirect(url_for('user', name=myuser['name']))
+
+    flash("Registration successful! Please log in.", "success")
     return redirect('/sign_in')
 
 
@@ -78,10 +92,10 @@ def register_validation():
 @app.route('/user/<name>')
 def user(name):
     # name = curser.execute("""SELECT * User_login WHERE name """)
-    if'id' in session:
-        return render_template('userlogin.html', name = name)
-    else:
+    if 'id' not in session:
         return redirect('/sign_in')
+
+    return render_template('userlogin.html', name=name)
     
     
     # return render_template('userlogin.html')
@@ -113,7 +127,7 @@ def submit_pickup():
 
 @app.route('/logout')
 def logout():
-    session.pop('id')
+    session.pop('id', None)  # Avoid KeyError by providing a default value
     return redirect('/')
 
 @app.route('/delevery')
