@@ -342,7 +342,7 @@ section#whyus {
     -webkit-text-fill-color: transparent;
     /* background: #04d976; */
     background: linear-gradient(270deg, #04d976 0, #00b8a5); 
-    /* -webkit-background-clip: text; */
+    -webkit-background-clip: text;
     /* /* color: #5b5b5b; */
     margin-top: 2rem;
 }
@@ -647,6 +647,12 @@ input, select {
     border-radius: 5px;
 }
 /* form section end */
+
+#map { 
+    height: 600px;
+    width: 80vh;
+}
+
 
 
 

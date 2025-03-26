@@ -72,3 +72,23 @@ document.getElementById('getStartedBtn').addEventListener('click', function(even
 
 
 
+// map 
+let mapToken = "pk.eyJ1Ijoic2F0dTM3NDEiLCJhIjoiY20yZnozZmdvMGZ0MTJqcGZiOWxmamJlZiJ9.RHWSIWZkP-P6NInnZ6Y4Tg";
+    console.log(mapToken);
+	mapboxgl.accessToken = mapToken;
+        const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        projection: 'globe', // Display the map as a globe, since satellite-v9 defaults to Mercator
+        zoom: 9,
+        center: [77.68391958626441, 9.568220832811845]
+    });
+
+    const marker1 = new mapboxgl.Marker()
+        .setLngLat([77.68391958626441, 9.568220832811845])
+        .addTo(map);
+
+    // Create a default Marker, colored black, rotated 45 degrees.
+    const marker2 = new mapboxgl.Marker({ color: 'black'})
+        .setLngLat([77.57499086165757,9.426781458172952])
+        .addTo(map);
